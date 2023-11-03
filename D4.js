@@ -70,41 +70,78 @@ console.log(controllo)
  La funzione deve aggiungere la parola "EPICODE" all'inizio della stringa fornita, ma se la stringa fornita comincia già con "EPICODE" allora deve
  ritornare la stringa originale senza alterarla.
 */
-let concatenazione = "EPICODE "
+let concatenazione = "EPICODE"
 function epify(casualString){
-    if (casualString === concatenazione+casualString)
+    if (casualString.startsWith(concatenazione)){
+        return casualString
 
+    }else {
+        return concatenazione +casualString
+    }
 }
-
+    
+let provaStringa = epify(" dice ciao amici")
+console.log(provaStringa)
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function check3and7(number){
+if (number <= 0 ){
+    return "Only positive values are accepted"
+}else if(number %3 ===0 || number %7 ===0){
+    return true
+
+}else{
+    return false
+}
+
+
+}
+let number = 49
+let testMultiplo = check3and7(number)
+console.log(testMultiplo)
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+/*function reverseString(inputString){
+   return  inputString.split(' ').reverse().join(' ')
+
+}
+let stringaDiProva = "Ciao a tutti i webdev!"
+let inversioneStringa = reverseString(stringaDiProva)
+console.log(stringaDiProva)/*
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+/*function upperFirst(string){
+
+
+}/*
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
-
+function cutString(string){
+    return string.slice(1,-1)
+}
+let tryString = cutString("ciao")
+console.log(tryString)
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(number){
+    return Math.floor(Math.random(number)*11)
+}
+let x = [1,2,3,4]
+ let numeriCasuali = giveMeRandom(x)
+console.log(numeriCasuali)
